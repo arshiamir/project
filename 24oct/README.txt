@@ -1,0 +1,1 @@
+install ttf lib before compiling on your machine
