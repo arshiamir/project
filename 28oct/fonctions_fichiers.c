@@ -351,7 +351,7 @@ void read_objects(const char* nomfichier, int* nbobj, SDL_Texture** tab_obj_tex,
         lig = -1;
         if (obj_counter>=0){
           SDL_SetColorKey(sur, SDL_TRUE, SDL_MapRGB(sur->format,0,0,0));
-          SDL_SaveBMP(sur,"kkkkkkkkkkkkkkkkkkkk");
+          SDL_SaveBMP(sur,"k");
           tab_obj_tex[obj_counter] = SDL_CreateTextureFromSurface(renderer,sur);
           SDL_FillRect(sur,NULL, SDL_MapRGB(sur->format,0,0,0));
         }
@@ -504,11 +504,11 @@ void read_objects_v2(const char* nomfichier, int* nbobj, obj_t* tab_obj, SDL_Ren
     }else{
       col++;
     }
-    printf("%c",ch);
+    //printf("%c",ch);
     //do this instruction for only objects, not terrain not empty lines
     if(obj_counter>=0 && obj_counter<*nbobj && lig >=0 && lig <5 && col>=0 && col<5 && ch == '#'){
       random=(rand()%3);
-      printf("%d\n",random);
+      //printf("%d\n",random);
       tab_obj[obj_counter].tab_cell[lig][col]=random;
       //choosing random texture between 3 available for each object
     }
@@ -530,7 +530,7 @@ void mouse_trigger(SDL_Point* p,obj_t *tab_obj, int* GLOBAL_OBJ_SELECTED, int nb
       for(col=0; col<5; col++){
         if(tab_obj[i].tab_cell[lig][col]>=0){
           if(SDL_PointInRect(p,&tab_obj[i].tab_rect[lig][col])){
-            printf("Obj clicked on=%d,Obj clicked on=%d,Obj clicked on=%d,",i,i,i);
+            //printf("Obj clicked on=%d,Obj clicked on=%d,Obj clicked on=%d,",i,i,i);
             *GLOBAL_OBJ_SELECTED = i;
             *dx=p->x-tab_obj[i].tab_rect[0][0].x;
             *dy=p->y-tab_obj[i].tab_rect[0][0].y;
@@ -548,6 +548,7 @@ void mouse_rollover(SDL_Point* p,obj_t *tab_obj,int* GLOBAL_OBJ_SELECTED, int* G
   SDL_Point point_temp;
   if(*GLOBAL_OBJ_SELECTED>=0){//at leat an object is selected
     //using the function overpass we will know if it surpasses the borders or not
+    
     point_temp.x = p->x - *dx;
     point_temp.y = p->y - *dy;
     if (overpass(tab_obj[*GLOBAL_OBJ_SELECTED], &point_temp)){
@@ -555,10 +556,10 @@ void mouse_rollover(SDL_Point* p,obj_t *tab_obj,int* GLOBAL_OBJ_SELECTED, int* G
     }
     for(lig=0; lig<5; lig++){
       for(col=0; col<5 ;col++){
-        if(tab_obj[*GLOBAL_OBJ_SELECTED].tab_cell[lig][col]>=0){
-          tab_obj[*GLOBAL_OBJ_SELECTED].tab_rect[lig][col].x=p->x - *dx +(col*32);
-          tab_obj[*GLOBAL_OBJ_SELECTED].tab_rect[lig][col].y=p->y - *dy +(lig*32);
-        }
+        //all the rects in obj should move no matter if full or empty
+        tab_obj[*GLOBAL_OBJ_SELECTED].tab_rect[lig][col].x=p->x - *dx +(col*32);
+        tab_obj[*GLOBAL_OBJ_SELECTED].tab_rect[lig][col].y=p->y - *dy +(lig*32);
+        
       }
     }
   }else{//none obj is selected
@@ -675,14 +676,12 @@ void mouse_release(obj_t* obj, int* GLOBAL_OBJ_SELECTED, SDL_Rect* terrain){
         }
       }
     }
-  }  
-  printf("surface intersection=%d\n",surface_intersection);
-  printf("surface obj=%d\n",surface_obj);
+  }
   if(((double)surface_intersection/surface_obj)>percent){
     for(lig=0; lig<5; lig++){
       for(col=0; col<5; col++){
         if(obj->tab_cell[lig][col]>=0){
-          printf("gone!!!!!!!");
+          printf("gone inside!!!!");
           obj->tab_rect[lig][col].x=round_up(obj->tab_rect[lig][col].x ,32);
           obj->tab_rect[lig][col].y=round_up(obj->tab_rect[lig][col].y ,32);
         }
