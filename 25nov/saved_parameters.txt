@@ -1,0 +1,27 @@
+0001
+12
+00 032 040
+01 032 160
+02 032 320
+03 032 480
+04 224 160
+05 224 320
+06 224 480
+07 799 032
+08 799 160
+09 799 320
+10 799 480
+11 416 480
+/
+2 1 2 0 1 x x x x x x x x x x x x x x x x x x x x 
+1 2 0 x x x 0 x x x x 1 x x x x x x x x x x x x x 
+0 2 x x x 2 1 x x x 0 x x x x x x x x x x x x x x 
+x 2 x x x 1 1 0 x x x 2 x x x x x x x x x x x x x 
+1 x x x x 1 0 x x x x 0 1 x x x x x x x x x x x x 
+0 2 0 1 x x 1 x x x x x x x x x x x x x x x x x x 
+2 1 0 x x 1 x x x x 2 x x x x x x x x x x x x x x 
+1 1 1 x x 2 x 2 x x x x x x x x x x x x x x x x x 
+0 0 x x x x 2 x x x x 2 0 x x x x x x x x x x x x 
+x 0 x x x 0 1 1 x x x x 0 x x x x x x x x x x x x 
+0 x x x x 0 2 1 0 x x x x x x x x x x x x x x x x 
+0 0 x x x x 0 1 1 x x x x x x x x x x x x x x x x 
