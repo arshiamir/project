@@ -1,0 +1,27 @@
+0073
+12
+288 064
+352 096
+448 064
+480 096
+480 160
+512 064
+576 064
+576 160
+608 128
+544 128
+544 000
+544 288
+/
+x x x x 0 x x x x 2 x x x x 0 x x x x 2 x x x x 0 
+x x x x x x x x x x x x x 2 x x x x 2 x x x 0 2 2 
+2 1 x x x 1 2 x x x 1 x x x x x x x x x x x x x x 
+x 0 x x x 0 0 2 x x x 2 x x x x x x x x x x x x x 
+0 x x x x 1 0 x x x x 0 0 x x x x x x x x x x x x 
+2 0 1 1 x x 1 x x x x x x x x x x x x x x x x x x 
+x x 1 2 2 x x x x 2 x x x x 0 x x x x x x x x x x 
+x x x 2 1 x x x x 1 x x x 1 2 x x x x x x x x x x 
+1 1 x x x x 0 x x x x 1 0 x x x x x x x x x x x x 
+x 1 x x x 2 1 2 x x x x 2 x x x x x x x x x x x x 
+x x x x x x x x x x x x x x x x 2 2 0 2 x x x x 2 
+1 2 x x x x 1 0 1 x x x x x x x x x x x x x x x x 
